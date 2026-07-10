@@ -8,13 +8,13 @@ const projects = (await getCollection('projects')).sort(
 );
 ---
 
-<BaseLayout title="Projects" description="Projects I've built.">
+<BaseLayout
+  title="Projects"
+  description="Projects I've built."
+  background="/mount_rainier.jpg"
+>
   <div class="container">
     <h1>Projects</h1>
-    <p class="lede">
-      Things I've built. Click any of them for the full story — what problem
-      it solved, how it works, and what came of it.
-    </p>
     <div class="grid">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
@@ -24,18 +24,14 @@ const projects = (await getCollection('projects')).sort(
 <style>
   h1 {
     font-size: 2rem;
-    margin: 0 0 0.5rem;
-  }
-
-  .lede {
-    color: var(--color-text-muted);
-    max-width: 36rem;
-    margin: 0 0 2rem;
+    margin: 0 0 1.5rem;
+    text-align: center;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 19rem));
+    justify-content: center;
     gap: 1.25rem;
   }
 </style>

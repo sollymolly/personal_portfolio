@@ -15,6 +15,8 @@ const projects = defineCollection({
     order: z.number().default(0), // lower numbers sort first
     github: z.string().url().optional(),
     demo: z.string().url().optional(),
+    background: z.string().optional(), // full-page photo behind the detail page
+
   }),
 });
 

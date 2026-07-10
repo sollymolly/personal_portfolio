@@ -40,12 +40,28 @@ html {
 
 body {
   margin: 0;
+  /* Flex column so the footer always sits at the exact bottom of the
+     viewport — no background strip showing beneath it on short pages */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Full-page photo background (set per page via BaseLayout's `background` prop).
+   The white veil strength can be tuned per page with BaseLayout's `veil` prop. */
+body.has-bg {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, var(--veil-top, 0.62)),
+      rgba(255, 255, 255, var(--veil-bottom, 0.78))
+    ),
+    var(--page-bg) center / cover no-repeat fixed;
 }
 
 h1,

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pdf = '/Sol_Park_Resume.pdf';
+---
+
+<BaseLayout
+  title="Resume"
+  description="Sol Park's resume"
+  background="/tennis_court.jpg"
+>
+  <div class="container">
+    <object data={pdf} type="application/pdf">
+      <p class="fallback">
+        Your browser can't display the PDF inline —
+        <a href={pdf} target="_blank" rel="noopener">open it here</a>.
+      </p>
+    </object>
+  </div>
+</BaseLayout>
+
+<style>
+  object {
+    display: block;
+    width: min(56rem, 100%);
+    height: 85vh;
+    margin-inline: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  }
+
+  .fallback {
+    padding: 2rem;
+    text-align: center;
+  }
+</style>

@@ -21,7 +21,11 @@ const when = date.toLocaleDateString('en-US', {
 });
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout
+  title={title}
+  description={summary}
+  background={project.data.background}
+>
   <article class="prose">
     <p class="back"><a href="/projects">← All projects</a></p>
     <h1>{title}</h1>

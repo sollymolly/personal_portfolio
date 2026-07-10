@@ -1,15 +1,14 @@
 // ------------------------------------------------------------------
-// Your personal info, in one place. Every page reads from here —
-// replace each placeholder and the whole site updates.
+// Your personal info, in one place. Every page reads from here.
 // ------------------------------------------------------------------
 export const SITE = {
-  name: 'Your Name',
-  role: 'Software Engineer', // e.g. "CS student at ___" or "SWE intern at ___"
+  name: 'Sol Park',
+  role: 'CS student at Princeton University · Machine learning & software engineering',
   tagline:
-    'PLACEHOLDER — one sentence on what you build, what you care about, or what a visitor should know first.',
-  email: 'you@example.com',
-  github: 'https://github.com/yourusername',
-  linkedin: 'https://www.linkedin.com/in/yourusername',
-  // Drop your resume at public/resume.pdf (or change this path).
-  resume: '/resume.pdf',
+    'I build ML models and the products around them — causal inference, optimization, and the engineering that makes them useful. Minoring in Quantitative Economics, Computational Biology, and Philosophy.',
+  email: 'solpark@princeton.edu',
+  github: 'https://github.com/sollymolly',
+  linkedin: 'https://www.linkedin.com/in/solpark06/',
+  // Links to the resume page, which embeds public/Sol_Park_Resume.pdf.
+  resume: '/resume',
 };

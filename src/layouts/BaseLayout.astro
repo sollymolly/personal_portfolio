@@ -7,9 +7,23 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /** Path to a full-page background photo (from public/), e.g. "/nassau_hall.jpg" */
+  background?: string;
+  /** White veil strength over the photo, 0–1. Lower = stronger photo. Default 0.62. */
+  veil?: number;
 }
 
-const { title, description = SITE.tagline } = Astro.props;
+const { title, description = SITE.tagline, background, veil } = Astro.props;
+
+const bodyStyle = background
+  ? [
+      `--page-bg: url('${background}')`,
+      veil !== undefined ? `--veil-top: ${veil}` : null,
+      veil !== undefined ? `--veil-bottom: ${Math.min(veil + 0.15, 1)}` : null,
+    ]
+      .filter(Boolean)
+      .join('; ')
+  : undefined;
 ---
 
 <!doctype html>
@@ -22,7 +36,7 @@ const { title, description = SITE.tagline } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class={background ? 'has-bg' : undefined} style={bodyStyle}>
     <Navbar />
     <main>
       <slot />
@@ -33,8 +47,7 @@ const { title, description = SITE.tagline } = Astro.props;
 
 <style>
   main {
-    /* Keep the footer near the bottom even on short pages */
-    min-height: calc(100vh - 13rem);
+    flex: 1; /* fills the space between navbar and footer */
     padding-block: 3rem 4.5rem;
   }
 </style>
