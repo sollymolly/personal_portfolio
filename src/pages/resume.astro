@@ -4,12 +4,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pdf = '/Sol_Park_Resume.pdf';
 ---
 
-<BaseLayout
-  title="Resume"
-  description="Sol Park's resume"
-  background="/tennis_court.jpg"
->
+<BaseLayout title="Resume" description="Sol Park's resume">
   <div class="container">
+    <p class="open">
+      <a class="open-btn" href={pdf} target="_blank" rel="noopener">
+        Open the PDF in a new tab ↗
+      </a>
+    </p>
     <object data={pdf} type="application/pdf">
       <p class="fallback">
         Your browser can't display the PDF inline —
@@ -20,6 +21,28 @@ const pdf = '/Sol_Park_Resume.pdf';
 </BaseLayout>
 
 <style>
+  .open {
+    text-align: center;
+    margin: 0 0 1.25rem;
+  }
+
+  .open-btn {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .open-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
   object {
     display: block;
     width: min(56rem, 100%);
@@ -32,5 +55,11 @@ const pdf = '/Sol_Park_Resume.pdf';
   .fallback {
     padding: 2rem;
     text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    object {
+      height: 70vh;
+    }
   }
 </style>

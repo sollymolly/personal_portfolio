@@ -57,4 +57,13 @@ const year = new Date().getFullYear();
   a:hover {
     color: var(--color-text);
   }
+
+  @media (max-width: 600px) {
+    .inner {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 0.75rem;
+    }
+  }
 </style>
