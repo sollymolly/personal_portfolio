@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+
+// PLACEHOLDER DATA — replace each entry with your real experience.
+const internships = [
+  {
+    role: 'Software Engineering Intern',
+    org: 'Company Name',
+    period: 'Summer 2025',
+    summary:
+      'One line on what you built or shipped, ideally with its impact (users, speed, scale).',
+  },
+  {
+    role: 'Software Engineering Intern',
+    org: 'Another Company',
+    period: 'Summer 2024',
+    summary: 'One line on what you built or shipped and why it mattered.',
+  },
+];
+
+const leadership = [
+  {
+    role: 'President',
+    org: 'Club or Organization Name',
+    period: '2024 – present',
+    summary:
+      'One line on what you led — team size, what you organized, what changed because of you.',
+  },
+  {
+    role: 'Member',
+    org: 'Group Name',
+    period: '2023 – present',
+    summary: 'One line on what you do here.',
+  },
+];
+---
+
+<BaseLayout title="About" description={`About ${SITE.name}`}>
+  <div class="prose">
+    <h1>About me</h1>
+    <p>
+      PLACEHOLDER — a short, human paragraph about who you are: what you're
+      studying or doing now, what kinds of problems you like working on, and a
+      detail or two that makes you a person rather than a resume (what got you
+      into this, what you do outside of code).
+    </p>
+
+    <h2>Experience</h2>
+    <ol class="timeline">
+      {
+        internships.map((item) => (
+          <li>
+            <div class="head">
+              <span class="title">
+                <strong>{item.role}</strong> · {item.org}
+              </span>
+              <span class="period">{item.period}</span>
+            </div>
+            <p>{item.summary}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <h2>Leadership &amp; groups</h2>
+    <ol class="timeline">
+      {
+        leadership.map((item) => (
+          <li>
+            <div class="head">
+              <span class="title">
+                <strong>{item.role}</strong> · {item.org}
+              </span>
+              <span class="period">{item.period}</span>
+            </div>
+            <p>{item.summary}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="resume"><a href={SITE.resume}>Download my resume (PDF) →</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin: 2.5rem 0 1.25rem;
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .timeline li {
+    position: relative;
+    padding: 0 0 1.5rem 1.25rem;
+  }
+
+  .timeline li:last-child {
+    padding-bottom: 0.25rem;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .period {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .timeline p {
+    margin: 0.25rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .resume {
+    margin-top: 2.5rem;
+  }
+</style>

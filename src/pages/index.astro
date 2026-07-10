@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { SITE } from '../config';
+
+const featured = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<BaseLayout title={`${SITE.name} — ${SITE.role}`}>
+  <section class="hero container">
+    <h1>Hi, I'm {SITE.name}.</h1>
+    <p class="role">{SITE.role}</p>
+    <p class="tagline">{SITE.tagline}</p>
+    <div class="links">
+      <a class="button" href="/projects">View my work</a>
+      <a href={SITE.github} target="_blank" rel="noopener">GitHub</a>
+      <a href={SITE.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+      <a href={SITE.resume}>Resume</a>
+    </div>
+  </section>
+
+  <section class="featured container">
+    <h2>Featured projects</h2>
+    <div class="grid">
+      {featured.map((project) => <ProjectCard project={project} />)}
+    </div>
+    <p class="more"><a href="/projects">See all projects →</a></p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: 2.5rem 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    margin: 0 0 0.25rem;
+  }
+
+  .role {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .tagline {
+    max-width: 36rem;
+    margin: 0 0 1.75rem;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .button {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .button:hover {
+    background: var(--color-accent-hover);
+    color: #fff;
+  }
+
+  .featured {
+    margin-top: 4rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
+  }
+
+  .more {
+    margin-top: 1.5rem;
+  }
+</style>

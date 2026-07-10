@@ -1,0 +1,116 @@
+/* ==================================================================
+   Design tokens — the entire look of the site lives in these
+   variables. When you bring your own design later, start here:
+   swap the values and the whole site follows.
+   ================================================================== */
+:root {
+  /* Color */
+  --color-bg: #ffffff;
+  --color-text: #1c1c1e;
+  --color-text-muted: #6e6e73;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-border: #e5e5ea;
+  --color-surface: #f6f6f7;
+
+  /* Type */
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas,
+    monospace;
+
+  /* Layout */
+  --width-content: 44rem; /* comfortable reading width (project pages, about) */
+  --width-wide: 64rem; /* navbar, project grids */
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-surface);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+/* Shared page containers */
+.container {
+  width: min(var(--width-wide), 100% - 3rem);
+  margin-inline: auto;
+}
+
+.prose {
+  width: min(var(--width-content), 100% - 3rem);
+  margin-inline: auto;
+}
+
+/* ------------------------------------------------------------------
+   Rendered Markdown (project detail pages)
+   ------------------------------------------------------------------ */
+article h2 {
+  margin: 2.25rem 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+article p,
+article ul,
+article ol {
+  margin-block: 0.75rem;
+}
+
+article blockquote {
+  margin: 1.25rem 0;
+  padding: 0.5rem 1.25rem;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+  border-radius: 0 8px 8px 0;
+  color: var(--color-text-muted);
+}
+
+article blockquote p {
+  margin-block: 0.5rem;
+}
