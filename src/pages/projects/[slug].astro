@@ -25,6 +25,7 @@ const when = date.toLocaleDateString('en-US', {
   title={title}
   description={summary}
   background={project.data.background}
+  veil={0.32}
 >
   <article class="prose">
     <p class="back"><a href="/projects">← All projects</a></p>
@@ -58,6 +59,23 @@ const when = date.toLocaleDateString('en-US', {
 </BaseLayout>
 
 <style>
+  .prose {
+    /* Same treatment as the About page: strong photo, with a feathered
+       radial scrim and text halo keeping the article readable */
+    color: #000;
+    font-weight: 500;
+    background: radial-gradient(
+      110% 105% at 50% 45%,
+      rgba(255, 255, 255, 0.78) 50%,
+      rgba(255, 255, 255, 0.4) 78%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    padding: 2rem 2.75rem 2.5rem;
+    text-shadow:
+      0 1px 3px rgba(255, 255, 255, 0.95),
+      0 0 14px rgba(255, 255, 255, 0.85);
+  }
+
   .back {
     margin: 0 0 2rem;
     font-size: 0.9rem;
@@ -70,7 +88,7 @@ const when = date.toLocaleDateString('en-US', {
 
   .summary {
     font-size: 1.15rem;
-    color: var(--color-text-muted);
+    color: #000;
     margin: 0 0 1rem;
   }
 
@@ -102,7 +120,7 @@ const when = date.toLocaleDateString('en-US', {
 
   .date {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: #000;
   }
 
   .ext {
@@ -118,6 +136,10 @@ const when = date.toLocaleDateString('en-US', {
   }
 
   @media (max-width: 640px) {
+    .prose {
+      padding: 1.5rem 1.1rem 2rem;
+    }
+
     h1 {
       font-size: 1.7rem;
     }
