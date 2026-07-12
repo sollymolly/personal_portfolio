@@ -3,35 +3,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 
 const coursework = [
-  'Intro to Programming Systems',
-  'Intro to Machine Learning',
-  'Data Structures & Algorithms',
-  'Probability & Stochastic Systems',
-  'Intro to Real Analysis',
-  'Statistical Genomics (graduate)',
+  'COS217: Programming Systems',
+  'COS324: Machine Learning',
+  'COS226: Data Structures & Algorithms',
+  'ORF309: Probability & Stochastic Systems',
+  'MAT320: Real Analysis',
+  'QCB408: [Graduate] Statistical Genomics',
 ];
 
 const internships = [
   {
     role: 'ML Platform Engineering Intern',
     org: 'Remitly',
-    period: 'Jul 2026 – present',
+    period: 'Jul 2026 – Present',
     summary:
-      'Building a causal inference model to determine the reasons behind customer churn — not just which customers leave, but why.',
+      'Creating a causal inference model to determine reasons for customer churn.',
   },
   {
     role: 'SafeConstruct',
     org: 'The Initiative for CryptoCurrencies & Contracts',
     period: 'Jun 2026',
     summary:
-      'Built a blockchain-based safety credentialing platform for construction workers — the full story is on the Projects page.',
+      'Deployed a blockchain-based safety credential system for construction workers, to decrease usage of fake credentials and to protect construction workers\' credentials on the blockchain.',
   },
   {
     role: 'Software Engineering Intern',
     org: 'Nirvana Carbon Solutions',
-    period: 'May – Aug 2025',
+    period: 'May 2025 – Aug 2025',
     summary:
-      'Built a Python optimization tool that maps biochar pit and irrigation placement from Google Earth spatial data, and led a team of five mapping 3,000+ hectares of coastal land for mangrove restoration — the largest effort of its kind.',
+      'Programmed a Python optimization tool mapping biochar pit and water irrigation locations using spatial data from Google Earth, improving farming efficiency for Indian farmers, helping advance carbon reduction efforts.',
   },
 ];
 
@@ -39,9 +39,16 @@ const leadership = [
   {
     role: 'Investor Relations Principal',
     org: 'Princeton Student Ventures',
-    period: 'Sep 2024 – present',
+    period: 'Sep 2024 – Present',
     summary:
-      'Lead investment theses with SciFi VC, and as a Senior Investments Analyst ran due diligence — market sizing, growth, and retention analysis — to grant up to $10K in funding to Princeton-founded startups. Along the way: conversations with 15+ founders from Princeton and beyond.',
+      'Leading investment theses with SciFi VC, analyzing young consumer sentiment on Fintech companies and researching enabling technologies; sourced, maintained, and continuing relationship with VC Partner.',
+  },
+  {
+    role: 'Business Manager',
+    org: 'Princeton Roaring 20 (A Cappella)',
+    period: 'Sep 2024 – Present',
+    summary:
+      'Managed over $30K worth of funds to organize international tours; set up gigs with other organizations.',
   },
 ];
 ---
@@ -53,15 +60,13 @@ const leadership = [
   veil={0.32}
 >
   <div class="prose">
-    <h1>About me</h1>
+    <h1>About</h1>
     <p>
       I'm a computer science student at Princeton University (B.S.E. '28),
       minoring in Quantitative Economics, Computational Biology, and
-      Philosophy. My interest in CS has always been broad — I like building
-      things, whatever shape they take — but my current focus is machine
-      learning: creating models, optimizing them, and shipping the products
-      around them. This summer I'm doing exactly that at Remitly, building a
-      causal inference model for customer churn.
+      Philosophy. Though I have, and always had, a broad interest in computer science,
+      my current focus is in machine learning. This summer, I'm creating and optimizing models
+      at Remitly, where I am building a causal inference model to find reasons for customer churn. 
     </p>
     <h2>Relevant Coursework</h2>
     <ul class="courses">
