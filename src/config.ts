@@ -4,6 +4,7 @@
 export const SITE = {
   name: 'Sol Park',
   role: 'CS @ Princeton University · ML & Software Engineering',
+  minors: 'Minors: Quantitative Economics, Computational Biology, & Philosophy',
   tagline:
     'Currently a ML Production Engineering Intern at Remitly, where I am directly working on building a ML model.',
   email: 'solpark@princeton.edu',

@@ -23,6 +23,7 @@ const featured = (await getCollection('projects', ({ data }) => data.featured))
         />
         <h1>Sol Park</h1>
         <p class="role">{SITE.role}</p>
+        <p class="minors">{SITE.minors}</p>
         <p class="tagline">{SITE.tagline}</p>
       </div>
     </div>
@@ -95,6 +96,13 @@ const featured = (await getCollection('projects', ({ data }) => data.featured))
   .role {
     font-size: 1.5rem;
     font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 0.35rem;
+  }
+
+  .minors {
+    font-size: 1.05rem;
+    font-weight: 600;
     color: var(--color-text);
     margin: 0 0 0.75rem;
   }
