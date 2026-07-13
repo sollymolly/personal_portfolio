@@ -3,9 +3,9 @@
 // ------------------------------------------------------------------
 export const SITE = {
   name: 'Sol Park',
-  role: 'CS student at Princeton University · Machine learning & software engineering',
+  role: 'CS @ Princeton University · ML & Software Engineering',
   tagline:
-    'I build ML models and the products around them — causal inference, optimization, and the engineering that makes them useful. Minoring in Quantitative Economics, Computational Biology, and Philosophy.',
+    'Currently a ML Production Engineering Intern at Remitly, where I am directly working on building a ML model.',
   email: 'solpark@princeton.edu',
   github: 'https://github.com/sollymolly',
   linkedin: 'https://www.linkedin.com/in/solpark06/',

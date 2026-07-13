@@ -1,46 +1,40 @@
 ---
 title: 'SafeConstruct'
-summary: 'A blockchain-backed safety credentialing platform for construction workers — verifiable on-chain credentials, without anyone handling private keys.'
+summary: 'A blockchain-backed safety credentialing platform for construction workers.'
 tech: ['Solidity', 'Next.js', 'TypeScript', 'Supabase', 'PostgreSQL']
 date: 2026-06-01
 featured: true
 order: 2
 demo: 'https://safeconstruct-test.vercel.app/'
+slides: 'https://docs.google.com/presentation/d/1MWnFiYeX-mkFgl4K8TC9WIVmRn3JccUu2HsVTJe30Y8/edit?usp=sharing'
 background: '/construction.jpg'
 ---
 
 > Built as part of **The Initiative for CryptoCurrencies & Contracts (IC3)**
 > at Princeton, June 2026.
 
-## The problem
+## Context
 
-Construction workers carry safety credentials — certifications, training
-records — between sites and employers, but the records themselves live in
-filing cabinets and spreadsheets. Verification is slow and forgeable. Putting
-credentials on-chain makes them tamper-proof and portable, but a naive
-blockchain system hands every credential issuer a private key to manage,
-which is unrealistic for a site office.
+Construction workers have to carry safety credentials in order to have approval of using 
+certain construction equipment. It is vital for their safety and the safety of others.
+The problem is that verifying these credentials can be a slow process. If people
+lose their credentials, they may need to be needlessly retrained. These credentials are 
+also forgeable, reflected by an infamous case in New York a few years back. My partner and I
+wanted to create a safe, blockchain-backed credential system to solve these issues.
 
-## What I built
+## The Product
 
-A blockchain-based safety credential system deployed on Base Sepolia (EVM),
-written in Solidity with Hardhat and ethers.js. The key design decision is a
-**relayer wallet pattern**: organizations issue credentials through the
-platform without ever touching a wallet, eliminating private-key exposure for
-issuers entirely.
+Each construction worker has their own worker wallet, which stores their safety credentials on-chain.
+A teacher/admin at a construction school has the ability to issue a safety credential to each of
+these construction workers. A manager at a construction company then has the ability to view each
+construction workers' wallet, and use that to verify whether or not the worker can have access to certain
+construction equipment. Accreditors give construction schools permissions on which credentials they
+are allowed to issue. This accreditor/school/company structure allows for a smooth credential issuance
+and verification system.
 
-Around the chain sits a full-stack web application — Next.js, TypeScript,
-Supabase Auth, and Prisma ORM on PostgreSQL — with a role system scoped per
-organization: the same user can hold certain privileges in one organization
-and different privileges in another.
+We are still working on this project, so the system is deployed on Base Sepolia, using testnet ETH.
+Scaling up to a useable product is simple. We would just need to deploy this on the ETH Mainnet.
+We decided to create a relayer wallet pattern for this product, which essentially allows
+construction schools to issue credentials on the chain without touching the worker's wallet directly.
 
-## How it works
 
-The platform includes a **shadow-user flow** that mirrors how job sites
-actually onboard: credentials can be issued to a worker before they've
-created an account, then claimed when they sign up. That means the paperwork
-never waits on the worker having downloaded an app.
-
-## Outcome
-
-A live test deployment is up on Vercel — try the demo link above.
