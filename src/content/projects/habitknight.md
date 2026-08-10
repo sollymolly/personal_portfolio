@@ -6,6 +6,7 @@ date: 2026-08-01
 featured: true
 order: 3
 github: 'https://github.com/sollymolly/todo'
+demo: 'https://habitknight.vercel.app'
 ---
 
 ## Context
