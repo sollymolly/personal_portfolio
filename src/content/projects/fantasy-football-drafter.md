@@ -4,7 +4,7 @@ summary: 'An auction-draft engine that turns ML point projections into real-time
 tech: ['Python', 'Streamlit', 'Machine Learning']
 date: 2026-06-01
 featured: true
-order: 1
+order: 2
 github: 'https://fantasy-auction-drafter.streamlit.app/'
 background: '/lumen_field.jpg'
 ---
