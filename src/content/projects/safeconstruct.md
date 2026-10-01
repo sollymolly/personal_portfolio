@@ -4,7 +4,7 @@ summary: 'A blockchain-backed safety credentialing platform for construction wor
 tech: ['Solidity', 'Next.js', 'TypeScript', 'Supabase', 'PostgreSQL']
 date: 2026-06-01
 featured: true
-order: 1
+order: 3
 demo: 'https://safeconstruct-test.vercel.app/'
 slides: 'https://docs.google.com/presentation/d/1MWnFiYeX-mkFgl4K8TC9WIVmRn3JccUu2HsVTJe30Y8/edit?usp=sharing'
 background: '/construction.jpg'

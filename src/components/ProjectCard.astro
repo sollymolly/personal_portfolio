@@ -3,13 +3,14 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   project: CollectionEntry<'projects'>;
+  lead?: boolean;
 }
 
-const { project } = Astro.props;
+const { project, lead = false } = Astro.props;
 const { title, summary, tech } = project.data;
 ---
 
-<a class="card" href={`/projects/${project.id}`}>
+<a class:list={['card', { lead }]} href={`/projects/${project.id}`}>
   <h3>{title}</h3>
   <p>{summary}</p>
   <ul class="tech">
@@ -41,6 +42,22 @@ const { title, summary, tech } = project.data;
     border-color: var(--color-accent);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .card.lead {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    gap: 0.75rem;
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .lead h3 {
+    font-size: 1.6rem;
+  }
+
+  .lead p {
+    font-size: 1.05rem;
   }
 
   h3 {
