@@ -3,15 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 
 const coursework = [
-  'COS217: Programming Systems',
-  'COS324: Machine Learning',
-  'COS226: Data Structures & Algorithms',
-  'COS418: Distributed Systems',
-  'COS375: Computer Architecture',
-  'COS522: Computational Complexity',
-  'COS597Y: Machine Learning for the Natural Sciences',
-  'MAT320: Real Analysis',
-  'QCB408: [Graduate] Statistical Genomics',
+  { name: 'COS597Y: Machine Learning for the Natural Sciences', emphasis: true },
+  { name: 'COS522: Computational Complexity', emphasis: true },
+  { name: 'COS418: Distributed Systems', emphasis: true },
+  { name: 'QCB408: [Graduate] Statistical Genomics' },
+  { name: 'COS375: Computer Architecture', emphasis: true },
+  { name: 'COS324: Machine Learning' },
+  { name: 'MAT320: Real Analysis' },
+  { name: 'COS226: Data Structures & Algorithms', emphasis: true },
+  { name: 'COS217: Programming Systems', emphasis: true },
 ];
 
 const internships = [
@@ -81,7 +81,9 @@ const leadership = [
     </p>
     <h2>Relevant Coursework</h2>
     <ul class="courses">
-      {coursework.map((course) => <li>{course}</li>)}
+      {coursework.map((course) => (
+        <li>{course.emphasis ? <strong>{course.name}</strong> : course.name}</li>
+      ))}
     </ul>
 
     <h2>Experience</h2>
