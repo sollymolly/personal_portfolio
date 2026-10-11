@@ -6,7 +6,7 @@ import { SITE } from '../config';
 
 const featured = (await getCollection('projects', ({ data }) => data.featured))
   .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 3);
+  .slice(0, 4);
 ---
 
 <BaseLayout title={`${SITE.name} — ${SITE.role}`} background="/nassau_hall.jpg">

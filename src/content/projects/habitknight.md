@@ -4,7 +4,7 @@ summary: 'A todo list where finishing things levels up a medieval character — 
 tech: ['Next.js', 'TypeScript', 'React', 'PostgreSQL', 'Tailwind CSS']
 date: 2026-08-01
 featured: true
-order: 1
+order: 2
 github: 'https://github.com/sollymolly/todo'
 demo: 'https://habitknight.vercel.app'
 ---
