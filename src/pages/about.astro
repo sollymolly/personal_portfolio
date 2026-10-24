@@ -16,11 +16,9 @@ const coursework = [
 
 const internships = [
   {
-    role: 'Software Engineer (Part-Time)',
-    org: 'Ondo Consulting',
+    role: 'Technical Staff',
+    org: 'Ondo Consulting Group',
     period: 'Aug 2026 – Present',
-    summary:
-      'Building production work for Ondo Research, an AI-driven platform that scrapes news sources, social media, and more to surface the most optimal products for our clients\' goals; also doing forward-deployed project work with healthcare clients, developing efficient data-based solutions.',
   },
   {
     role: 'ML Platform Engineering Intern',
@@ -76,8 +74,8 @@ const leadership = [
       minoring in Computational Biology and
       Philosophy. Though I have, and always had, a broad interest in computer science,
       my current focus is in machine learning. This past summer, I built a causal inference
-      model at Remitly to find reasons for customer churn, and I'm now working part-time as a
-      software engineer at Ondo Consulting.
+      model at Remitly to find reasons for customer churn, and I'm now on the technical
+      staff at Ondo Consulting Group.
     </p>
     <h2>Relevant Coursework</h2>
     <ul class="courses">
@@ -97,7 +95,7 @@ const leadership = [
               </span>
               <span class="period">{item.period}</span>
             </div>
-            <p>{item.summary}</p>
+            {item.summary && <p>{item.summary}</p>}
           </li>
         ))
       }
