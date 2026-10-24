@@ -16,11 +16,6 @@ const coursework = [
 
 const internships = [
   {
-    role: 'Technical Staff',
-    org: 'Ondo Consulting Group',
-    period: 'Aug 2026 – Present',
-  },
-  {
     role: 'ML Platform Engineering Intern',
     org: 'Remitly',
     period: 'Jul 2026 – Aug 2026',
@@ -74,8 +69,7 @@ const leadership = [
       minoring in Computational Biology and
       Philosophy. Though I have, and always had, a broad interest in computer science,
       my current focus is in machine learning. This past summer, I built a causal inference
-      model at Remitly to find reasons for customer churn, and I'm now on the technical
-      staff at Ondo Consulting Group.
+      model at Remitly to find reasons for customer churn.
     </p>
     <h2>Relevant Coursework</h2>
     <ul class="courses">
@@ -95,7 +89,7 @@ const leadership = [
               </span>
               <span class="period">{item.period}</span>
             </div>
-            {item.summary && <p>{item.summary}</p>}
+            <p>{item.summary}</p>
           </li>
         ))
       }

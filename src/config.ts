@@ -10,6 +10,6 @@ export const SITE = {
   email: 'solpark@princeton.edu',
   github: 'https://github.com/sollymolly',
   linkedin: 'https://www.linkedin.com/in/solpark06/',
-  // Links to the resume page, which embeds public/Sol_Park_Resume.pdf.
+  // Links to the resume page, which embeds public/Park_Sol.pdf.
   resume: '/resume',
 };
